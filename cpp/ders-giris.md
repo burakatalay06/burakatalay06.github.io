@@ -13,4 +13,4 @@ int main() {
 }
 ```
 
-(deneme)[deneme]
+[deneme](deneme)
