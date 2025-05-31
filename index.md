@@ -7,4 +7,5 @@ title: Ana Sayfa
 
 Burak Atalay tarafından hazırlanmıştır.
 
-📘 [deneme](deneme)
+![cpp](assets/images/cpp.png)
+📘 [deneme](cpp/deneme)
