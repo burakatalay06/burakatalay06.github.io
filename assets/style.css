@@ -24,12 +24,13 @@ body.dark-mode footer {
 }
 
 /* Code block styling */
-code, pre {
-  font-family: 'Fira Code', 'Consolas', monospace;
+pre, code {
+  font-family: "Fira Code", "Consolas", monospace;
   font-size: 15px;
   line-height: 1.5;
+  border-radius: 6px;
+  overflow-x: auto;
 }
-
 
 /* Rouge code highlight theme (like monokai) */
 .highlight {

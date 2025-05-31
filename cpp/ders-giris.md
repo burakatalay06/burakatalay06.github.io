@@ -4,7 +4,7 @@ title: Derse Giriş
 ---
 
 # C++'a Giriş
-
+[main page](../index)
 ```cpp
 #include <iostream>
 int main() {
