@@ -232,9 +232,12 @@
 
   <script>
     function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('open');
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+      document.body.classList.toggle('sidebar-open');
     }
   </script>
+
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {

@@ -112,9 +112,19 @@ body {
 
 .sidebar.open {
     left: 0;
+    transform: translateX(0);
 }
 
+body.sidebar-open #main-content {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+}
 
+@media screen and (max-width: 768px) {
+    body.sidebar-open #main-content {
+        margin-left: 0;
+    }
+}
 
 main {
     padding: 2em;
@@ -229,32 +239,32 @@ pre {
 
 
 .accordion {
-  background-color: transparent;
-  color: inherit;
-  cursor: pointer;
-  padding: 0.5em 0;
-  width: 100%;
-  border: none;
-  outline: none;
-  font-size: 1em;
-  text-align: left;
-  transition: background-color 0.3s ease;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+    padding: 0.5em 0;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    text-align: left;
+    transition: background-color 0.3s ease;
 }
 
 .accordion:hover {
-  color: #007acc;
+    color: #007acc;
 }
 
 .panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding-left: 1em;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 1em;
 }
 
 .panel a {
-  display: block;
-  padding: 0.2em 0;
-  text-decoration: none;
-  color: inherit;
+    display: block;
+    padding: 0.2em 0;
+    text-decoration: none;
+    color: inherit;
 }
