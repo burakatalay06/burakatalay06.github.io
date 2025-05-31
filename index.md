@@ -19,5 +19,3 @@ Burak Atalay tarafından hazırlanmıştır.
   ## Bu başlık animasyonlu görünür
   Hoş geldiniz!
 </div>
-
-[❤️](ask)

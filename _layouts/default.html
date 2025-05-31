@@ -94,9 +94,9 @@
   <div id="sidebar" class="sidebar">
     <h2>📚 Dersler</h2>
     <ul>
-      <li><a href="/">Ana Sayfa</a></li>
-      <li><a href="/cpp/deneme">Deneme</a></li>
-      <li><a href="/cpp/ders-giris">Derslere Giriş</a></li>
+      {% for item in site.data.navigation %}
+      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+      {% endfor %}
     </ul>
   </div>
 

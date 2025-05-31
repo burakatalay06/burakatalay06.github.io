@@ -1,0 +1,14 @@
+- title: Ana Sayfa
+  url: /
+
+- title: Deneme
+  url: /cpp/deneme
+
+- title: Derslere Giriş
+  url: /cpp/ders-giris
+
+- title: C++ Dersi 1
+  url: /cpp/ders-1
+
+- title: C++ Dersi 2
+  url: /cpp/ders-2
