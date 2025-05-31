@@ -18,4 +18,4 @@ int main() {
 }
 ```
 
-[back](./)
+[main page](../index.md)

@@ -1,4 +1,5 @@
 title: Burak Atalay
-theme: jekyll-theme-minimal
+#theme: jekyll-theme-minimal
 markdown: kramdown
 highlighter: rouge
+description: Burak
