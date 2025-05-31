@@ -114,9 +114,6 @@ body {
     left: 0;
 }
 
-.sidebar.open ~ .sidebar-toggle {
-  display: none;
-}
 
 
 main {

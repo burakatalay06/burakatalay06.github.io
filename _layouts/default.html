@@ -158,6 +158,20 @@
     document.getElementById('sidebar').classList.toggle('open');
   }
 </script>
+<script>
+  const sidebar = document.getElementById('sidebar');
+  const toggleBtn = document.querySelector('.sidebar-toggle');
+
+  function toggleSidebar() {
+    sidebar.classList.toggle('open');
+
+    if (sidebar.classList.contains('open')) {
+      toggleBtn.style.display = 'none';
+    } else {
+      toggleBtn.style.display = 'block';
+    }
+  }
+</script>
 
 <body>
   <!-- Menü Button -->
