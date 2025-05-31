@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }} | {{ site.title }}</title>
@@ -19,21 +20,21 @@
     <p><a href="/">Ana Sayfa</a></p>
   </header>
 
+  <button onclick="toggleSidebar()" style="position:fixed; top:50px; left:10px; z-index:999;">📚 Menü</button>
+
   <main style="display: flex; padding: 2em;">
-    <!-- Sol Menü -->
-    <nav style="min-width: 200px; margin-right: 2em;">
+    <!-- Sidebar -->
+    <nav id="sidebar" style="min-width:200px; margin-right:2em; display:block;">
       <h3>Dersler</h3>
       <ul style="list-style: none; padding-left: 0;">
         <li><a href="/cpp/derse-giris">Derse Giriş</a></li>
         <li><a href="/cpp/degiskenler">Değişkenler</a></li>
         <li><a href="/cpp/kosullar">Koşullar</a></li>
-        <li><a href="/cpp/donguler">Döngüler</a></li>
-        <!-- Yeni sayfalar ekledikçe buraya linklerini ekleyebilirsin -->
       </ul>
     </nav>
 
-    <!-- Sayfa İçeriği -->
-    <section style="flex: 1;">
+    <!-- İçerik -->
+    <section style="flex:1;">
       {{ content }}
     </section>
   </main>
@@ -42,4 +43,5 @@
     <small>© {{ site.title }}</small>
   </footer>
 </body>
+
 </html>
