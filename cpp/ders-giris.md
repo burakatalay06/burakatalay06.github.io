@@ -13,7 +13,6 @@ int main() {
 }
 ```
 
-<pre> ```cpp #include &lt;iostream&gt; int main() { std::cout &lt;&lt; "Merhaba Dünya" &lt;&lt; std::endl; return 0; } ``` </pre>
 
 
 [deneme](deneme)

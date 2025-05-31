@@ -1,47 +1,95 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="/assets/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #f8f9fa;
+      padding: 1em;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 998;
+    }
+    .sidebar.open {
+      transform: translateX(0);
+    }
+    .sidebar-toggle {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 999;
+      background-color: #333;
+      color: #fff;
+      padding: 0.5em;
+      border: none;
+      cursor: pointer;
+    }
+    .dark-mode .sidebar {
+      background-color: #222;
+      color: #ddd;
+    }
+    main {
+      margin-left: 0;
+      padding: 2em;
+      transition: margin-left 0.3s ease;
+    }
+    .sidebar.open ~ main {
+      margin-left: 250px;
+    }
+    pre {
+      background-color: #eee;
+      padding: 1em;
+      overflow-x: auto;
+    }
+    .dark-mode pre {
+      background-color: #222;
+      color: #ddd;
+    }
+  </style>
 </head>
-
 <body>
-  <!-- 🌙 Dark Mode Toggle Button -->
+  <button onclick="toggleSidebar()" class="sidebar-toggle">📂 Menü</button>
   <button onclick="toggleDarkMode()" style="position:fixed; top:10px; right:10px; z-index:999;">
     🌙 Dark Mode
   </button>
+
   <script src="/assets/darkmode.js"></script>
 
-  <header style="padding:1em; border-bottom:1px solid #ccc;">
-    <h1>{{ site.title }}</h1>
-    <p><a href="/">Ana Sayfa</a></p>
-  </header>
+  <div id="sidebar" class="sidebar">
+    <h2>📚 Dersler</h2>
+    <ul>
+      <li><a href="/">Ana Sayfa</a></li>
+      <li><a href="/cpp/deneme">Deneme</a></li>
+      <li><a href="/cpp/ders-giris">Derslere Giriş</a></li>
+    </ul>
+  </div>
 
-  <button onclick="toggleSidebar()" style="position:fixed; top:50px; left:10px; z-index:999;">📚 Menü</button>
-
-  <main style="display: flex; padding: 2em;">
-    <!-- Sidebar -->
-    <nav id="sidebar" style="min-width:200px; margin-right:2em; display:block;">
-      <h3>Dersler</h3>
-      <ul style="list-style: none; padding-left: 0;">
-        <li><a href="/cpp/derse-giris">Derse Giriş</a></li>
-        <li><a href="/cpp/degiskenler">Değişkenler</a></li>
-        <li><a href="/cpp/kosullar">Koşullar</a></li>
-      </ul>
-    </nav>
-
-    <!-- İçerik -->
-    <section style="flex:1;">
-      {{ content }}
-    </section>
+  <main>
+    {{ content }}
   </main>
 
   <footer style="padding:1em; text-align:center; color:gray;">
     <small>© {{ site.title }}</small>
   </footer>
-</body>
 
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
+</body>
 </html>
