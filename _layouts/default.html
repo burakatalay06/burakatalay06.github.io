@@ -173,6 +173,36 @@
   }
 </script>
 
+<script>
+  function toggleAccordion(button) {
+    button.classList.toggle("active");
+    const panel = button.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  }
+
+  // Aktif sayfa vurgulama
+  document.querySelectorAll('.sidebar-link').forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add('active');
+      // Parent accordion’u da aç
+      const panel = link.closest('.panel');
+      if (panel) {
+        panel.style.display = 'block';
+        const accordion = panel.previousElementSibling;
+        if (accordion && accordion.classList.contains('accordion')) {
+          accordion.classList.add('active');
+        }
+      }
+    }
+  });
+</script>
+
+
+
 <body>
   <!-- Menü Button -->
   <button onclick="toggleSidebar()" class="styled-button sidebar-toggle">
@@ -192,14 +222,16 @@
 
     {% for item in site.data.navigation %}
     {% if item.children %}
-    <button class="accordion">{{ item.title }}</button>
+    <button class="accordion" onclick="toggleAccordion(this)">
+      ⏵ {{ item.title }}
+    </button>
     <div class="panel">
       {% for child in item.children %}
-      <a href="{{ child.url }}">{{ child.title }}</a>
+      <a href="{{ child.url }}" class="sidebar-link">{{ child.title }}</a>
       {% endfor %}
     </div>
     {% else %}
-    <a href="{{ item.url }}">{{ item.title }}</a>
+    <a href="{{ item.url }}" class="sidebar-link">{{ item.title }}</a>
     {% endif %}
     {% endfor %}
   </div>

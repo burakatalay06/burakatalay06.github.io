@@ -239,16 +239,41 @@ pre {
 
 
 .accordion {
-    background-color: transparent;
-    color: inherit;
-    cursor: pointer;
-    padding: 0.5em 0;
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    text-align: left;
-    transition: background-color 0.3s ease;
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0.5em 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: inherit;
+}
+
+.accordion::before {
+  content: "⏵";
+  margin-right: 0.5em;
+  transition: transform 0.3s ease;
+}
+
+.accordion.active::before {
+  content: "⏷";
+}
+
+.panel {
+  display: none;
+  padding-left: 1em;
+  margin-top: 0.3em;
+}
+
+.accordion.active + .panel {
+  display: block;
+}
+
+.sidebar-link.active {
+  font-weight: bold;
+  color: #007aff;
 }
 
 .accordion:hover {
