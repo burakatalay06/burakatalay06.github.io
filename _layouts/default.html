@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <title>{{ page.title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="/assets/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <!-- 🌙 Dark Mode Toggle Butonu -->
+  <!-- 🌙 Dark Mode Toggle Button -->
   <button onclick="toggleDarkMode()" style="position:fixed; top:10px; right:10px; z-index:999;">
     🌙 Dark Mode
   </button>
@@ -18,8 +19,23 @@
     <p><a href="/">Ana Sayfa</a></p>
   </header>
 
-  <main style="padding: 2em;">
-    {{ content }}
+  <main style="display: flex; padding: 2em;">
+    <!-- Sol Menü -->
+    <nav style="min-width: 200px; margin-right: 2em;">
+      <h3>Dersler</h3>
+      <ul style="list-style: none; padding-left: 0;">
+        <li><a href="/cpp/derse-giris">Derse Giriş</a></li>
+        <li><a href="/cpp/degiskenler">Değişkenler</a></li>
+        <li><a href="/cpp/kosullar">Koşullar</a></li>
+        <li><a href="/cpp/donguler">Döngüler</a></li>
+        <!-- Yeni sayfalar ekledikçe buraya linklerini ekleyebilirsin -->
+      </ul>
+    </nav>
+
+    <!-- Sayfa İçeriği -->
+    <section style="flex: 1;">
+      {{ content }}
+    </section>
   </main>
 
   <footer style="padding:1em; text-align:center; color:gray;">
