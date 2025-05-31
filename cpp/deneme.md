@@ -3,7 +3,7 @@ title: Derse Giriş
 layout: default
 ---
 
-# C++ Ders 1: Değişkenler
+# C++ Ders 1: Değişkenlerrr
 
 Bu derste C++'ta değişkenleri öğreneceğiz.
 
