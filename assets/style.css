@@ -32,3 +32,19 @@ pre, code {
   font-family: 'Fira Code', monospace;
   overflow-x: auto;
 }
+
+
+/* Rouge code highlight theme (like monokai) */
+.highlight {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1em;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+.highlight .k { color: #66d9ef }     /* keyword */
+.highlight .s { color: #e6db74 }     /* string */
+.highlight .c { color: #75715e }     /* comment */
+.highlight .nf { color: #a6e22e }    /* function name */
+.highlight .o { color: #f92672 }     /* operator */
+
