@@ -105,6 +105,7 @@
     button[onclick="toggleDarkMode()"] {
       animation: fadeInSoft 0.5s ease;
     }
+
     .dark-mode .sidebar {
       background-color: #1e1e1e;
       color: #ccc;
@@ -132,6 +133,23 @@
     .dark-mode pre {
       background-color: #222;
       color: #ddd;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #444;
+      color: #fff;
+      border: none;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 0.8em;
+      border-radius: 4px;
+    }
+
+    .code-container {
+      position: relative;
     }
   </style>
 </head>
@@ -178,6 +196,35 @@
       document.getElementById('sidebar').classList.toggle('open');
     }
   </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("pre > code").forEach((codeBlock) => {
+        const button = document.createElement("button");
+        button.className = "copy-btn";
+        button.type = "button";
+        button.innerText = "Kopyala";
+
+        button.addEventListener("click", () => {
+          navigator.clipboard.writeText(codeBlock.innerText).then(() => {
+            button.innerText = "Kopyalandı!";
+            setTimeout(() => {
+              button.innerText = "Kopyala";
+            }, 2000);
+          });
+        });
+
+        const pre = codeBlock.parentNode;
+        const wrapper = document.createElement("div");
+        wrapper.className = "code-container";
+
+        pre.parentNode.replaceChild(wrapper, pre);
+        wrapper.appendChild(pre);
+        wrapper.appendChild(button);
+      });
+    });
+  </script>
+
 </body>
 
 </html>
