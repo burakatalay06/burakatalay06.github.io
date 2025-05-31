@@ -1,14 +1,12 @@
 - title: Ana Sayfa
   url: /
 
-- title: Deneme
-  url: /cpp/deneme
 
 - title: C++ Dersleri
   children:
     - title: C++ başlarken
       url: /cpp/ders-giris
     - title: C++ Dersi 1
-      url: /cpp/ders-1
+      url: /cpp/deneme
     - title: C++ Dersi 2
       url: /cpp/ders-2
