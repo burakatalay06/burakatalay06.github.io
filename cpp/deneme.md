@@ -1,5 +1,5 @@
 ---
-title: C++ Ders 1 - Değişkenler
+title: Derse Giriş
 layout: default
 ---
 
@@ -18,4 +18,4 @@ int main() {
 }
 ```
 
-[main page](../index.md)
+[derse giris](ders-giris)
