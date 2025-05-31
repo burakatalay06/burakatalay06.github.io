@@ -83,6 +83,18 @@ body {
     overflow-x: hidden;
 }
 
+.sidebar-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 999;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em;
+    border: none;
+    cursor: pointer;
+}
+
 .sidebar {
     width: 250px;
     max-width: 80%;
@@ -102,17 +114,10 @@ body {
     left: 0;
 }
 
-.sidebar-toggle {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 999;
-    background-color: #333;
-    color: #fff;
-    padding: 0.5em;
-    border: none;
-    cursor: pointer;
+.sidebar.open ~ .sidebar-toggle {
+  display: none;
 }
+
 
 main {
     padding: 2em;
