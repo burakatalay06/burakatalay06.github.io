@@ -8,4 +8,8 @@ title: Ana Sayfa
 Burak Atalay tarafından hazırlanmıştır.
 
 ![cpp](assets/images/cpp.png)
+
+
+
+
 📘 [deneme](cpp/deneme)
