@@ -7,14 +7,14 @@
 
   <title>{{ page.title }} | {{ site.title }}</title>
 
-  <!-- Stil dosyaları -->
+  <!-- Stil docs -->
   <link rel="stylesheet" href="/assets/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
 
-  <!-- Prism Çekirdek JS -->
+  <!-- Prism core JS -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
 
-  <!-- Autoloader Eklentisi -->
+  <!-- Autoloader ext -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
   <script>
@@ -188,21 +188,42 @@
 
   <!-- Sidebar -->
   <div id="sidebar" class="sidebar">
-    <div class="sidebar-header">
-      <h2>📚 Menü</h2>
-      <button onclick="toggleSidebar()" class="sidebar-close">✖</button>
-    </div>
-    <ul class="sidebar-menu">
-      {% for item in site.data.navigation %}
-      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    <h2>📚 Menü</h2>
+
+    {% for item in site.data.navigation %}
+    {% if item.children %}
+    <button class="accordion">{{ item.title }}</button>
+    <div class="panel">
+      {% for child in item.children %}
+      <a href="{{ child.url }}">{{ child.title }}</a>
       {% endfor %}
-    </ul>
+    </div>
+    {% else %}
+    <a href="{{ item.url }}">{{ item.title }}</a>
+    {% endif %}
+    {% endfor %}
   </div>
 
-  <!-- İçerik -->
+
+  <!-- content -->
   <main>
     {{ content }}
   </main>
+
+  <script>
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
 
   <!-- Footer -->
   <footer style="padding:1em; text-align:center; color:gray;">

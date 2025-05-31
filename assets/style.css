@@ -226,3 +226,35 @@ pre {
     background: linear-gradient(to right, #fff, #ccc);
     color: black;
 }
+
+
+.accordion {
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.5em 0;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.accordion:hover {
+  color: #007acc;
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 1em;
+}
+
+.panel a {
+  display: block;
+  padding: 0.2em 0;
+  text-decoration: none;
+  color: inherit;
+}
