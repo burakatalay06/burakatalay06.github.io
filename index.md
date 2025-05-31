@@ -12,7 +12,7 @@ Burak Atalay tarafından hazırlanmıştır.
 
 
 
-📘 [deneme](cpp/deneme)
+📘 [derslere giris](cpp/ders-giris)
 
 
 <div class="fade-in">
