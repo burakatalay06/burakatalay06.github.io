@@ -12,9 +12,12 @@ window.onload = function () {
 
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
+  const btn = document.querySelector(".sidebar-toggle");
   if (sidebar.style.display === "none") {
     sidebar.style.display = "block";
+    btn.style.display = "none";
   } else {
     sidebar.style.display = "none";
+    btn.style.display = "block";
   }
 }
