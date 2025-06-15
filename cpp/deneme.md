@@ -6,7 +6,7 @@ layout: default
 # C++ Ders 1: Değişkenler
 
 Bu derste C++'ta değişkenleri öğreneceğiz.
-
+Selamlar
 ## Kod Örneği
 
 ```cpp
